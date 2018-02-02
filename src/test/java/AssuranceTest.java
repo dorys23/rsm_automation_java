@@ -13,12 +13,11 @@ import static org.testng.Assert.assertEquals;
 
 public class AssuranceTest {
     private WebDriver driver;
-    private Browser browser;
     private AssurancePage assurancePage;
 
     @BeforeClass
     public void beforeClass(){
-        browser = new Browser();
+        Browser browser = new Browser();
         driver = browser.getChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         assurancePage = new AssurancePage(driver);

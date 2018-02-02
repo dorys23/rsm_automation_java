@@ -16,19 +16,19 @@ public class BasePage {
         return ExpectedConditions.visibilityOfElementLocated(locator).apply(driver);
     }
 
-    public void selectFromDropdownMenu(WebElement element, String option) {
+    void selectFromDropdownMenu(WebElement element, String option) {
         Select dropDown = new Select(element);
         dropDown.selectByVisibleText(option);
     }
 
-    public void focusOnANewlyOpenedTab(WebDriver driver) {
+    protected void focusOnANewlyOpenedTab(WebDriver driver) {
         Set<String> Pages = driver.getWindowHandles();
         Object WebPages[] = Pages.toArray();
         driver.switchTo().window(WebPages[1].toString());
 
     }
 
-    public void hoverOverAnElement(WebDriver driver, WebElement element1, WebElement element2, WebElement element3){
+    void hoverOverAnElement(WebDriver driver, WebElement element1, WebElement element2, WebElement element3){
         Actions action = new Actions(driver);
         action.moveToElement(element1).moveToElement(element2).moveToElement(element3).click().build().perform();
     }

@@ -12,7 +12,6 @@ import static org.testng.Assert.assertEquals;
 
 public class HeaderTest extends BasePage{
     private WebDriver driver;
-    private Browser browser;
     private HeaderSection headerSection;
     private ChadPage chadPage;
     private CanadaPage canadaPage;
@@ -20,7 +19,7 @@ public class HeaderTest extends BasePage{
 
     @BeforeClass
     public void beforeClass(){
-        browser = new Browser();
+        Browser browser = new Browser();
         driver = browser.getChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         headerSection = new HeaderSection(driver);

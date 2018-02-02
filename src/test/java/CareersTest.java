@@ -13,13 +13,12 @@ import static org.testng.Assert.assertEquals;
 
 public class CareersTest {
     private WebDriver driver;
-    private Browser browser;
     private HeaderSection headerSection;
     private CareersPage careersPage;
 
     @BeforeClass
     public void beforeClass(){
-        browser = new Browser();
+        Browser browser = new Browser();
         driver = browser.getChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         headerSection = new HeaderSection(driver);
